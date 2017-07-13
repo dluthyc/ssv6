@@ -1,4 +1,6 @@
-# -
+# 原理
+<img src="http://wx4.sinaimg.cn/mw690/8cb7c87ely1fhielh28rwj20pw074glq.jpg" />
+比如你想访问谷歌，直接访问的话通过防火墙的时候会被拦下来。你用Shadowsocks把你的真实目的地隐藏起来，告诉防火墙我只是去访问一个VPS，防火墙放行了，流量到了VPS之后，VPS替你去访问谷歌，再把谷歌返回的结果用Shadowsocks包起来还给你。
 # -步骤
 # 一，领优惠券
 Github给学生准备了一个大礼包，链接在此：https://education.github.com/pack
