@@ -42,7 +42,7 @@ vi /etc/ss4.json<br/>
 }<br/>
 其中server_port可以自己修改，不要和常用端口冲突即可。<br/>
 然后启动ss服务：<br/>
-ssserver -c /etc/ss4.json -d start --pid-file ss1.pid<br/>
+ssserver -c /etc/ss4.json -d start<br/>
 服务器重启后还得上来再敲一遍这条命令，嫌麻烦可以做个自启动。<br/>
 至此，服务器端的Shadowsocks搭建完毕。
 # 五、客户端
@@ -71,13 +71,13 @@ PAC选使用本地PAC，然后请从GFList更新本地PAC。一小段时间后�
 # 八、IPv6
 稍加配置你就可以用IPv6的流量访问任意站点了。
 服务器端：<br/>
-创建第二个配置文件<br/>
 在做这一步之前，最好先ping一下IPv6的地址看能不能ping通<br/>
-vi /etc/ss6.json<br/>
+修改配置文件
+vi /etc/ss4.json<br/>
 内容如下：<br/>
 {<br/>
-    "server":"你虚拟机的IPv6 IP",<br/>
-    "server_port":8389,<br/>
+    "server":"::",<br/>
+    "server_port":8388,<br/>
     "local_address":"127.0.0.1",<br/>
     "local_port":1080,<br/>
     "password":"你的密码",<br/>
@@ -85,9 +85,9 @@ vi /etc/ss6.json<br/>
     "method":"aes-256-cfb",<br/>
     "fast_open":false<br/>
 }<br/>
-注意server_port不能与之前ss4.json中的一样。<br/>
+其实就是把IP修改成 "::"<br/>
 然后启动服务：<br/>
-ssserver -c /etc/ss6.json -d start --pid-file ss2.pid<br/>
+ssserver -c /etc/ss4.json -d restart<br/>
 <br/>
 客户端：<br/>
 同IPv4一样，编辑服务器，只不过服务器地址要填你虚拟机的IPv6地址。<br/>
