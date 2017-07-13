@@ -48,7 +48,7 @@ ssserver -c /etc/ss4.json -d start --pid-file ss1.pid<br/>
 安卓可以下个APKPure（一个跟Google Play差不多的应用市场 没有被墙），从里面可以下到安卓端的Shadowsocks.<br/>
 解压后运行小飞机图标，任务栏右下角会有个小飞机图标，右击->服务器->编辑服务器<br/>
 <br/>
-<img src='http://img.027cgb.cn/20170713/20177131871775731906.png' />
+
 <br/>
 服务器地址对应之前配置文件的server，服务器端口对应server_port、密码、加密方式都要和配置文件一样。<br/>
 代理端口1080，也和配置文件一样<br/>
